@@ -1,0 +1,24 @@
+# Secrets — never commit
+.env
+**/.env
+!**/.env.example
+
+# Local state
+pipeline.log
+outbox/pending/*
+outbox/uploaded/*
+outbox/failed/*
+envs/
+jobs/
+traj/
+runs/
+**/*.parquet
+**/*.tar.zst
+**/*.log
+
+# Caches and venvs
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.venv/
+*.pyc

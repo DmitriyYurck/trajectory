@@ -1,0 +1,16 @@
+# Non-secret configuration. Secrets come only from .env / environment.
+preflight:
+  # Free-disk gate for full runs.
+  min_free_gb: 300
+
+pipeline:
+  watch_dirs:
+    tbench: ./jobs
+    swesmith: ./runs/swesmith
+    r2e: ./traj
+  outbox: ./outbox
+  pipeline_log: ./pipeline.log
+  batch_size: 50 # files per batch_bucket_files call
+  retries: 5 # retries with exponential backoff
+  retry_base_delay_s: 2
+  poll_interval_s: 2
